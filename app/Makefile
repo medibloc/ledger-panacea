@@ -59,7 +59,7 @@ $(info COIN  = [$(COIN)])
 
 ifeq ($(COIN),MED)
 # Main app configuration
-APPNAME = "Panacea"
+APPNAME = "MediBloc"
 APPPATH = "44'/371'"
 else
 define error_message

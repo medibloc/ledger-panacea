@@ -1,4 +1,4 @@
-# Panacea App - Ledger Nano S
+# MediBloc App - Ledger Nano S
 ## General structure
 
 The general structure of commands and responses is as follows:
