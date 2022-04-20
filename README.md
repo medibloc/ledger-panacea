@@ -1,6 +1,6 @@
-# Ledger Cosmos app
+# Ledger Panacea app
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
-[![GithubActions](https://github.com/cosmos/ledger-cosmos/actions/workflows/main.yml/badge.svg)](https://github.com/cosmos/ledger-cosmos/blob/main/.github/workflows/main.yaml)
+[![GithubActions](https://github.com/medibloc/ledger-panacea/actions/workflows/main.yml/badge.svg)](https://github.com/medibloc/ledger-panacea/blob/main/.github/workflows/main.yaml)
 
 ---
 
@@ -10,9 +10,9 @@ _Please visit our website at [zondax.ch](zondax.ch)_
 
 ---
 
-This project contains the Cosmos app for Ledger Nano S and X.
+This project contains the Panacea app for Ledger Nano S and X.
 
-- Ledger Nano S/X Cosmos app
+- Ledger Nano S/X Panacea app
 - Specs / Documentation
 - C++ unit tests
 - Zemu tests
