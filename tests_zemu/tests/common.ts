@@ -72,7 +72,7 @@ export const example_tx_str_basic = {
 
 export const example_tx_str_expert = {
   account_number: '108',
-  chain_id: 'cosmoshub-2',
+  chain_id: 'panacea-3',
   fee: {
     amount: [
       {
@@ -197,4 +197,46 @@ export const example_tx_str_basic_extra_fields = {
   ],
   sequence: '106',
   unknown_field: 123456
+}
+
+export const ibc_denoms = {
+  account_number: "0",
+  chain_id: "panacea-3",
+  fee: {
+    amount: [
+      {
+        "amount": '5',
+        "denom": 'umed',
+      }
+    ],
+    gas: '10000',
+  },
+  memo: "testmemo",
+  msgs: [
+    {
+      inputs: [
+        {
+          address: "panaceaaccaddr1d9h8qat5e4ehc5",
+          coins: [
+            {
+              amount: '10',
+              denom: 'ibc/27394FB092D2ECCD56123C74F36E4C1F926001CEADA9CA97EA622B25F41E5EB2'
+            }
+          ]
+        }
+      ],
+      outputs: [
+        {
+          address: 'panaceaaccaddr1da6hgur4wse3jx32',
+          coins: [
+            {
+              amount: '10',
+              denom: 'ibc/27394FB092D2ECCD56123C74F36E4C1F926001CEADA9CA97EA622B25F41E5EB2'
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  sequence: '1'
 }
