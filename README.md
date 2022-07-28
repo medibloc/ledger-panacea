@@ -157,14 +157,14 @@ The Makefile will build the firmware in a docker container and leave the binary 
 
 - Build
 
-   ```
+   ```bash
    make                # Builds the app
    ```
 
 - Upload to a device
    The following command will upload the application to the ledger.
    Please note that the Nano X doesn't support side loading, therefore you must use the device emulator [Speculos](https://developers.ledger.com/docs/speculos/introduction/) for loading to work.
-   ```
+   ```bash
    make load          # Builds and loads the app to the Nano S device
    make delete        # Delete the app from the Nano S device
 
