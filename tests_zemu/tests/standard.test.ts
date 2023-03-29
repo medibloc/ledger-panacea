@@ -194,7 +194,7 @@ describe('Standard', function () {
       console.log(respPk)
 
       // do not wait here..
-      const signatureRequest = app.sign(path, tx)
+      const signatureRequest = app.sign(path, Buffer.from(tx))
 
       // Wait until we are not in the main menu
       await sim.waitUntilScreenIsNot(sim.getMainMenuSnapshot())
@@ -239,7 +239,7 @@ describe('Standard', function () {
       console.log(respPk)
 
       // do not wait here..
-      const signatureRequest = app.sign(path, tx)
+      const signatureRequest = app.sign(path, Buffer.from(tx))
 
       // Wait until we are not in the main menu
       await sim.waitUntilScreenIsNot(sim.getMainMenuSnapshot())
@@ -283,7 +283,7 @@ describe('Standard', function () {
       console.log(respPk)
 
       // do not wait here..
-      const signatureRequest = app.sign(path, tx)
+      const signatureRequest = app.sign(path, Buffer.from(tx))
 
       // Wait until we are not in the main menu
       await sim.waitUntilScreenIsNot(sim.getMainMenuSnapshot())
@@ -328,7 +328,7 @@ describe('Standard', function () {
       console.log(respPk)
 
       // do not wait here..
-      const signatureRequest = app.sign(path, tx)
+      const signatureRequest = app.sign(path, Buffer.from(tx))
 
       // Wait until we are not in the main menu
       await sim.waitUntilScreenIsNot(sim.getMainMenuSnapshot())
