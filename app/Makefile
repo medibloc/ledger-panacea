@@ -28,17 +28,11 @@ include $(BOLOS_SDK)/Makefile.defines
 include $(CURDIR)/Makefile.version
 
 ifndef COIN
-COIN=ATOM
+COIN=MED
 endif
 
 PRODUCTION_BUILD ?= 1
-ifeq ($(COIN),ATOM)
-ifeq ($(TARGET_NAME),TARGET_NANOS)
-    HAVE_SWAP ?= 0
-else
-    HAVE_SWAP ?= 1
-endif
-endif
+HAVE_SWAP ?= 0
 
 # Display the target name
 $(info ************ TARGET_NAME  = [$(TARGET_NAME)])
@@ -67,10 +61,10 @@ include $(CURDIR)/../deps/ledger-zxlib/makefiles/Makefile.app_testing
 
 $(info COIN  = [$(COIN)])
 
-ifeq ($(COIN),ATOM)
+ifeq ($(COIN),MED)
 # Main app configuration
-APPNAME = "Cosmos"
-APPPATH = "44'/118'" --path "44'/60'"
+APPNAME = "MediBloc"
+APPPATH = "44'/371'" --path "44'/118'" --path "44'/60'"
 else
 define error_message
 
@@ -129,7 +123,7 @@ dep/%.d: %.c Makefile
 
 .PHONY: listvariants
 listvariants:
-	@echo VARIANTS COIN ATOM
+	@echo VARIANTS COIN MED
 
 .PHONY: version
 version:

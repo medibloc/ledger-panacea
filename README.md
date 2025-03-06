@@ -1,6 +1,6 @@
-# Ledger Cosmos app
+# Ledger MediBloc app
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
-[![GithubActions](https://github.com/cosmos/ledger-cosmos/actions/workflows/main.yml/badge.svg)](https://github.com/cosmos/ledger-cosmos/blob/main/.github/workflows/main.yaml)
+[![GithubActions](https://github.com/medibloc/ledger-panacea/actions/workflows/main.yml/badge.svg)](https://github.com/medibloc/ledger-panacea/blob/main/.github/workflows/main.yaml)
 
 ---
 
@@ -13,9 +13,9 @@ You can also visit [Zondax Hub](https://hub.zondax.ch/cosmos) to test any of the
 
 ---
 
-This project contains the Cosmos app for Ledger Nano S, Nano S+, X and Stax.
+This project contains the MediBloc app for Ledger Nano S, Nano S+, X and Stax.
 
-- Ledger Nano S/S+/X/Stax Cosmos app
+- Ledger Nano S/S+/X/Stax MediBloc app
 - Specs / Documentation
 - C++ unit tests
 - Zemu tests

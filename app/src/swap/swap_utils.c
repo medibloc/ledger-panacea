@@ -22,7 +22,7 @@
 #include "app_mode.h"
 
 const chains_t chains[] = {
-    {COIN_DEFAULT_CHAINID, " ATOM", " uatom", 6, "cosmos"},
+    {COIN_DEFAULT_CHAINID, " MED", " umed", 6, "panacea"},
     {OSMOSIS_CHAINID, " OSMO", " uosmo", 6, "osmo"},
     {DYDX_CHAINID, " DYDX", " adydx", 18, "dydx"},
     {MANTRA_CHAINID, " OM", " uom", 18, "mantra"},
