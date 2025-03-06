@@ -1,18 +1,21 @@
-# Ledger MediBloc app
+# Ledger Cosmos app
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
-[![GithubActions](https://github.com/medibloc/ledger-panacea/actions/workflows/main.yml/badge.svg)](https://github.com/medibloc/ledger-panacea/blob/main/.github/workflows/main.yaml)
+[![GithubActions](https://github.com/cosmos/ledger-cosmos/actions/workflows/main.yml/badge.svg)](https://github.com/cosmos/ledger-cosmos/blob/main/.github/workflows/main.yaml)
 
 ---
 
-![zondax](docs/zondax.jpg)
+![zondax_light](docs/zondax_light.png#gh-light-mode-only)
+![zondax_dark](docs/zondax_dark.png#gh-dark-mode-only)
 
 _Please visit our website at [zondax.ch](zondax.ch)_
 
+You can also visit [Zondax Hub](https://hub.zondax.ch/cosmos) to test any of the versions of the app
+
 ---
 
-This project contains the MediBloc app for Ledger Nano S and X.
+This project contains the Cosmos app for Ledger Nano S, Nano S+, X and Stax.
 
-- Ledger Nano S/X MediBloc app
+- Ledger Nano S/S+/X/Stax Cosmos app
 - Specs / Documentation
 - C++ unit tests
 - Zemu tests
@@ -62,7 +65,7 @@ then run:
 
 - We only officially support Ubuntu. Install the following packages:
    ```
-   sudo apt update && sudo apt -y install build-essential git wget cmake \
+   sudo apt update && apt-get -y install build-essential git wget cmake \
   libssl-dev libgmp-dev autoconf libtool
    ```
 
@@ -74,7 +77,7 @@ then run:
 - This project requires Ledger firmware 2.0
     - The current repository keeps track of Ledger's SDK but it is possible to override it by changing the git submodule.
 
-*Warning*: Some IDEs may not use the same python interpreter or virtual enviroment as the one you used when running `pip`.
+*Warning*: Some IDEs may not use the same python interpreter or virtual environment as the one you used when running `pip`.
 If you see conan is not found, check that you installed the package in the same interpreter as the one that launches `cmake`.
 
 ## How to build ?
@@ -147,8 +150,41 @@ To run a single specific test:
 >>
 >    **Have a separate and marked device that is used ONLY for development and testing**
 
-In Linux hosts it might be necessary to adjust udev rules, etc.
-Refer to Ledger documentation: https://support.ledger.com/hc/en-us/articles/115005165269-Fix-connection-issues
+   There are a few additional steps that increase reproducibility and simplify development:
+
+**1 - Ensure your device works in your OS**
+- In Linux hosts it might be necessary to adjust udev rules, etc.
+
+  Refer to Ledger documentation: https://support.ledger.com/hc/en-us/articles/115005165269-Fix-connection-issues
+
+**2 - Set a test mnemonic**
+
+Many of our integration tests expect the device to be configured with a known test mnemonic.
+
+- Plug your device while pressing the right button
+
+- Your device will show "Recovery" in the screen
+
+- Double click
+
+- Run `make dev_init`. This will take about 2 minutes. The device will be initialized to:
+
+   ```
+   PIN: 5555
+   Mnemonic: equip will roof matter pink blind book anxiety banner elbow sun young
+   ```
+
+**3 - Add a development certificate**
+
+- Plug your device while pressing the right button
+
+- Your device will show "Recovery" in the screen
+
+- Click both buttons at the same time
+
+- Enter your pin if necessary
+
+- Run `make dev_ca`. The device will receive a development certificate to avoid constant manual confirmations.
 
 
 ### Loading into your development device
@@ -157,22 +193,20 @@ The Makefile will build the firmware in a docker container and leave the binary 
 
 - Build
 
-   ```bash
+   ```
    make                # Builds the app
    ```
 
 - Upload to a device
-   The following command will upload the application to the ledger.
-   Please note that the Nano X doesn't support side loading, therefore you must use the device emulator [Speculos](https://developers.ledger.com/docs/speculos/introduction/) for loading to work.
-   ```bash
-   make load          # Builds and loads the app to the Nano S device
-   make delete        # Delete the app from the Nano S device
-
-   make loadS2        # Builds and loads the app to the Nano S+ device
-   make deleteS2      # Delete the app from the Nano S+ device
+   The following command will upload the application to the ledger. _Warning: The application will be deleted before uploading._
+   ```
+   make load          # Builds and loads the app to the device
    ```
 
 ## APDU Specifications
+
+### DISCLAIMER
+Ledger NanoS does not support Cosmos Textual Mode due to memory restriction
 
 - [APDU Protocol](docs/APDUSPEC.md)
 - [Transaction format](docs/TXSPEC.md)

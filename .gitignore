@@ -82,6 +82,7 @@ cmake-build-fuzz/
 !\deps/nanox-secure-sdk
 !\deps/ledger-zxlib
 !\deps/tinycbor
+!\deps/tinycbor-ledger
 !\deps/BLAKE
 
 app/src/glyphs.c
@@ -90,6 +91,8 @@ app/src/glyphs.h
 /build
 .vscode/dryrun.log
 .vscode/targets.log
+app/build/*
+.DS_Store
 
 fuzz-*.log
 /fuzz/corpora
